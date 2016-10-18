@@ -1,3 +1,5 @@
+
+
 function toNormal (celInput) {
 	console.log("to cel happened");
 		var celToFer = celInput * 9 / 5 + 32;
@@ -24,9 +26,21 @@ convertButton.addEventListener("click" , function(event){
 
 	return toCel(mine);
 	}
-	else 
-		return null;
+	else if (toCel() > 32 ){
+	document.getElementById("converted").style.backgroundColor = "lightblue";
+	console.log("should be blue");
+}
+
+// 	else if (toCel() < 32){
+// 	document.getElementById("converted").innerHTML + "background-color:blue"
+// };
+
+
+
+
 });
+
+console.log("running if statements")
 
 
 // 1) we need to know whether cel or feh is selected. HOW 
