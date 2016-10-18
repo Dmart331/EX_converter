@@ -13,31 +13,46 @@ function toCel (celInput) {
 		var newMessage = "Temp in C " + ferToCel + " from F";
 		console.log(newMessage);
 		document.getElementById("converted").innerHTML = newMessage;
+		return ferToCel;
 }
 
 convertButton.addEventListener("click" , function(event){
 	var mine = document.getElementById("cowboy").value;
 
 	if (document.getElementById("normal").checked){
-
-		return toNormal(mine);
+		console.log("Fah checked")
+		if(mine > 32 ){
+		document.getElementById("converted").style.backgroundColor = "red";	
+		else if(mine <= 15 && mine >= 32){
+			document.getElementById("converted").style.backgroundColor = "green";
+		}	
 	}
-	else if (document.getElementById("weird").checked){ 
+		else if(mine < 0){
+		document.getElementById("converted").style.backgroundColor = "blue";
+		}
+		return toNormal(mine);
+}
+		else if (document.getElementById("weird").checked){ 
+
+		if(mine > 60 ){
+		document.getElementById("converted").style.backgroundColor = "red";
+}
+		else if(mine <= 70 && mine >= 40){
+			document.getElementById("converted").style.backgroundColor = "green";
+		}
+		else if(mine < 32){
+		document.getElementById("converted").style.backgroundColor = "blue";
+		}
+		
+		
+
 
 	return toCel(mine);
-	}
-	else if (toCel() > 32 ){
-	document.getElementById("converted").style.backgroundColor = "lightblue";
-	console.log("should be blue");
-}
+	};
 
 // 	else if (toCel() < 32){
 // 	document.getElementById("converted").innerHTML + "background-color:blue"
 // };
-
-
-
-
 });
 
 console.log("running if statements")
